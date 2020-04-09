@@ -1,0 +1,19 @@
+{
+  "name": "discord-typescript-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "(rm -rf dist || rmdir /S /Q dist) && nodemon -e ts --exec \"npm run build && npm start\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^13.5.0",
+    "nodemon": "^2.0.2",
+    "typescript": "^3.7.5"
+  }
+}
