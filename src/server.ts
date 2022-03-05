@@ -1,9 +1,8 @@
-import env from 'dotenv-placeholder';
 import { Telegraf } from 'telegraf';
 import { addScriptsToBot } from './scripts';
+import './dotenv-config';
 
 // config the app
-env.config({ path: __dirname + '/../.env' });
 const token = process.env.BOT_TOKEN;
 if (token === undefined) {
     throw new Error('BOT_TOKEN must be provided!');
@@ -12,7 +11,9 @@ if (token === undefined) {
 // launch bot's scripts
 const bot = new Telegraf(token);
 addScriptsToBot(bot);
-bot.launch();
+bot.launch().then(() => {
+    console.log('✨ Telegram bot started')
+});
 
 // Enable graceful stop
 process.once('SIGINT', () => bot.stop('SIGINT'));

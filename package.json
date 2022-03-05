@@ -1,17 +1,17 @@
 {
-  "scripts": {
-    "build": "tsc",
-    "start": "node dist/index.js",
-    "postinstall": "tsc",
-    "dev": "(rm -rf dist || rmdir /S /Q dist) && nodemon -e ts --exec \"npm run build && npm start\""
-  },
-  "devDependencies": {
-    "@types/glob": "^7.2.0",
-    "@types/node": "^17.0.21",
-    "nodemon": "^2.0.2",
-    "typescript": "^4.6.2"
-  },
-  "dependencies": {
-    "dotenv-placeholder": "^1.7.1"
-  }
+    "scripts": {
+        "start": "ts-node ./src/server.ts",
+        "watch": "nodemon -e ts,tsx --exec yarn start",
+        "watch:debug": "nodemon --inspect=5858 -e ts,tsx --exec node -r ts-node/register ./src/server.ts"
+    },
+    "devDependencies": {
+        "@types/glob": "^7.2.0",
+        "@types/node": "^17.0.21",
+        "nodemon": "^2.0.2",
+        "typescript": "^4.6.2"
+    },
+    "dependencies": {
+        "dotenv-placeholder": "^1.7.1",
+        "ts-node": "^10.6.0"
+    }
 }
