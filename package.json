@@ -12,6 +12,7 @@
     },
     "dependencies": {
         "dotenv-placeholder": "^1.7.1",
+        "telegraf": "^4.7.0",
         "ts-node": "^10.6.0"
     }
 }
